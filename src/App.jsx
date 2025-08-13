@@ -1,6 +1,7 @@
 import { useState } from "react";
 import LuckySlider from "./components/LuckySlider.jsx";
 import LuckyReceipt from "./components/LuckyReceipt.jsx";
+import TodoList from "./components/TodoList.jsx";
 import "./styles/lucky.css";
 
 export default function App() {
@@ -37,12 +38,18 @@ export default function App() {
 
   return (
     <div className="content">
-      <LuckySlider onAdd={handleAddLuck} />
-      <LuckyReceipt
-        luckData={luckData}
-        onChangeCount={handleChangeCount}
-        totalScore={totalScore}
-      />
+      <div className="luck-section">
+        <LuckySlider onAdd={handleAddLuck} />
+        <LuckyReceipt
+          luckData={luckData}
+          onChangeCount={handleChangeCount}
+          totalScore={totalScore}
+        />
+      </div>
+
+      <div className="todo-section">
+        <TodoList />
+      </div>
     </div>
   );
 }

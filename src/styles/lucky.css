@@ -11,9 +11,17 @@ body {
     height: 100vh;
 }
 
-/* 콘텐츠 컨테이너 - items & receipt 가로 정렬 */
+/* 페이지 전체 컨테이너: 세로 흐름 */
 .content {
     display: flex;
+    flex-direction: column; /* 행운 영역 + 투두리스트 순서로 쌓기 */
+}
+
+/* LuckySlider + LuckyReceipt 가로 정렬 */
+.luck-section {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
 }
 
 /* 왼쪽 섹션 - 운세 선택 */
@@ -23,6 +31,7 @@ body {
     padding-right: 40px;
     border-right: #00000010 solid 1px;
     min-width: 0;
+    padding-bottom: 40px;
 }
 
 .title {
@@ -78,7 +87,6 @@ body {
     border: none;
     font: inherit;
     line-height: normal;
-
     width: 100%;
     padding: 8px;
     border-radius: 16px;
@@ -86,8 +94,7 @@ body {
     background-color: #08CD2C;
     color: #fff;
     font-weight: 700;
-    cursor: pointer; 
-
+    cursor: pointer;
     margin-top: auto;
 }
 
@@ -100,7 +107,8 @@ body {
 .receipt {
     flex: 1;
     padding-left: 40px;
-    margin: 40px 40px 0 0 ;
+    margin: 40px 40px 0 0;
+    padding-bottom: 40px;
 }
 
 .listGroup {
@@ -151,7 +159,7 @@ body {
     font-weight: 800;
     line-height: 140%;
     padding-top: 24px;
-    border-top: #08CD2C solid 1px ;
+    border-top: #08CD2C solid 1px;
 }
 
 .result-area {
@@ -173,6 +181,70 @@ body {
 }
 
 .count-display.flash {
-    color: #08CD2C; /* 일시적으로 바뀔 색상 */
-    font-weight: 800; /* 폰트 굵기도 변경 */
+    color: #08CD2C;
+    font-weight: 800;
+}
+
+/* TodoList 스타일 */
+.todo-container {
+    border-top: #00000010 solid 1px;
+    padding: 40px;
+    background: #fff;
+    border-radius: 8px;
+}
+
+.todo-input {
+    display: flex;
+    gap: 8px;
+}
+
+.todo-input input {
+    flex: 1;
+    padding: 16px;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+}
+
+.todo-list input[type="checkbox"] {
+  width: 20px;       /* 가로 크기 */
+  height: 20px;      /* 세로 크기 */
+  cursor: pointer;   /* 마우스 모양 변경 */
+    accent-color: #05ac23;
+}
+
+.todo-input button {
+    padding: 8px 24px;
+    background: #08CD2C;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.todo-list {
+    margin-top: 32px;
+    list-style: none;
+    padding: 0;
+}
+
+.todo-list li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 8px 0 8px;
+    margin-bottom: 16px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.todo-list button {
+    margin-left: auto;
+    background: #f44336;
+    border: none;
+    border-radius: 4px;
+    padding: 6px 12px;
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
 }
