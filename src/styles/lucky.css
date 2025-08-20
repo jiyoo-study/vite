@@ -203,13 +203,8 @@ body {
     padding: 16px;
     border: 1px solid #d9d9d9;
     border-radius: 4px;
-}
-
-.todo-list input[type="checkbox"] {
-  width: 20px;       /* 가로 크기 */
-  height: 20px;      /* 세로 크기 */
-  cursor: pointer;   /* 마우스 모양 변경 */
-    accent-color: #05ac23;
+    font-size: 16px;
+    font-family: 'SUITE', sans-serif;
 }
 
 .todo-input button {
@@ -220,6 +215,7 @@ body {
     color: #fff;
     font-size: 16px;
     font-weight: 700;
+    cursor: pointer;
 }
 
 .todo-list {
@@ -236,10 +232,92 @@ body {
     margin-bottom: 16px;
     font-size: 16px;
     font-weight: 500;
+    border-radius: 4px;
+    transition: background 0.2s, border 0.2s;
 }
 
+/* 체크박스 스타일 */
+.todo-list input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: #05ac23;
+}
+
+/* 완료된 항목 텍스트 줄긋기 */
+.todo-list .todo-text.done {
+    text-decoration: line-through;
+    color: #aaa;
+}
+
+/* 수정 버튼 */
+.todo-list .edit-btn {
+    background: #fff;
+    color: #08cd2c;
+    border: 1px solid #08cd2c;
+    margin-right: 4px;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+.todo-list .edit-btn:hover {
+    background: #08cd2c;
+    color: #fff;
+}
+
+/* 저장 버튼 */
+.todo-list .save-btn {
+    background: #08cd2c;
+    color: #fff;
+    border: 1px solid #08cd2c;
+    margin-right: 4px;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.todo-list .save-btn:hover {
+    background: #0ca63c;
+}
+
+/* 취소 버튼 */
+.todo-list .cancel-btn {
+    background: #e0e0e0;
+    color: #333;
+    border: 1px solid #e0e0e0;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.todo-list .cancel-btn:hover {
+    background: #bbbbbb;
+}
+
+/* 수정 입력창 */
+.todo-list .edit-input {
+    flex: 1;
+    padding: 12px;
+    border: 1.5px solid #08cd2c;
+    border-radius: 4px;
+    font-size: 16px;
+    background: #fafdfc;
+    margin-right: 8px;
+    font-family: 'SUITE', sans-serif;
+    color: #111;
+    font-weight: 600;
+}
+
+/* 삭제 버튼 스타일 유지 */
 .todo-list button {
-    margin-left: auto;
+    margin-left: 0;
     background: #f44336;
     border: none;
     border-radius: 4px;
@@ -247,4 +325,45 @@ body {
     color: white;
     font-weight: 600;
     font-size: 14px;
+    cursor: pointer;
+}
+.todo-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 8px;
+  margin-bottom: 16px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 4px;
+  transition: background 0.2s, border 0.2s;
+  justify-content: space-between;  /* 버튼들을 오른쪽 끝에 정렬 */
+}
+
+.todo-list .left-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-grow: 1;
+}
+
+.todo-list .button-group {
+  display: flex;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.todo-list .edit-input {
+  flex: 1;
+  padding: 12px;
+  border: 1.5px solid #08cd2c;
+  border-radius: 4px;
+  font-size: 16px;
+  background: #fafdfc;
+  margin-right: 8px;
+}
+
+button svg {
+  margin-right: 6px;
+  vertical-align: middle;
 }
